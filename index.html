@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-
-	<title>Svelte app</title>
-
-	<link rel='icon' type='image/png' href='/favicon.png'>
-	<link rel='stylesheet' href='/global.css'>
-	<link rel='stylesheet' href='/build/bundle.css'>
-
-	<script defer src='/build/bundle.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coyotes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src='app.js'></script>
+    
 </head>
+<body id='body'>
+    <header id='header'>
+        <img src='resources/coyotes_logo'>
+        <h1>Time Calculator</h1>
+    </header>
+    
+    
+    
+    <input type='number' value='3' id='mins' min='1' max='6' onchange="minFunction()">:
+    <input type='number' value='30' id='seconds' min='0' max='55' step='5' onchange="secFunction()">
+    <input type="button" onclick="sumFunction()" value="calculate">
 
-<body>
+    <p id="rewrite">3</p>
+    <p id="rewrite2">30</p>
+    <p id="sumFunc">210</p>
+
+    <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>goal time</th>
+            <th>goal pace per 400m</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>200m</td>
+            <td id='pace200'></td>
+            <td>n/a</td>
+          </tr>
+          <tr>
+            <td>300m</td>
+            <td id='pace300'></td>
+            <td>n/a</td>
+          </tr>
+          <tr>
+            <td>400m</td>
+            <td id='pace400'></td>
+            <td id='split400'></td>
+          </tr>
+          <tr>
+            <td>800m</td>
+            <td id='pace800'></td>
+            <td id='split800'></td>
+          </tr>
+          <tr>
+            <td>1200m</td>
+            <td id='pace1200'></td>
+            <td id='split1200'></td>
+          </tr>
+        </tbody>
+  </table>
+
+    
+
 </body>
+
 </html>
