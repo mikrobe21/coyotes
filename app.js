@@ -19,7 +19,16 @@ function minFunction() {
       let pace400 = ((total/2)*1.132867133).toFixed();
       let pace800 = (total*1.202797203).toFixed();
       let pace1200 =(total*1.5*1.244755245).toFixed();
-      
+      //math for mm:ss
+      let pace200mmss = new Date(pace200 * 1000).toISOString().substr(14, 5)
+      let pace300mmss = new Date(pace300 * 1000).toISOString().substr(14, 5)
+      let pace400mmss = new Date(pace400 * 1000).toISOString().substr(14, 5)
+      let pace800mmss = new Date(pace800 * 1000).toISOString().substr(14, 5)
+      let pace1200mmss = new Date(pace1200 * 1000).toISOString().substr(14, 5)
+      //more math for mm:ss
+      let split400mmss = new Date(parseInt(pace400) * 1000).toISOString().substr(14, 5)
+      let split800mmss = new Date(parseInt(pace800/2) * 1000).toISOString().substr(14, 5)
+      let split1200mmss = new Date(parseInt(pace1200/3) * 1000).toISOString().substr(14, 5)
       //total time paces
       document.getElementById('pace200').innerHTML=pace200;
       document.getElementById('pace300').innerHTML=pace300;
@@ -30,9 +39,19 @@ function minFunction() {
       document.getElementById('split400').innerHTML=parseInt(pace400);
       document.getElementById('split800').innerHTML=parseInt(pace800/2);
       document.getElementById('split1200').innerHTML=parseInt(pace1200/3);
+      //total time in mm:ss
+      document.getElementById('pace200mmss').innerHTML=pace200mmss;
+      document.getElementById('pace300mmss').innerHTML=pace300mmss;
+      document.getElementById('pace400mmss').innerHTML=pace400mmss;
+      document.getElementById('pace800mmss').innerHTML=pace800mmss;
+      document.getElementById('pace1200mmss').innerHTML=pace1200mmss;
 
+      //split per 400m in mm:ss
+      document.getElementById('split400mmss').innerHTML=split400mmss;
+      document.getElementById('split800mmss').innerHTML=split800mmss;
+      document.getElementById('split1200mmss').innerHTML=split1200mmss;
 
-      //document.getElementById('sumFunc').innerHTML=total;
+      
   }
 
 
