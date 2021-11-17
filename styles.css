@@ -1,22 +1,7 @@
-/* h1{
-    color: purple;
-}
 
-div{
-    border-color: black;
-}
-
-input {
-    width: 10%;
-}
-
-input:focus{
-    background-color: lightblue;
-}
-*/
 img{
-    height: 20%;
-    width: 20%;
+    height: 50%;
+    width: 50%;
 }
 
 tr:hover {background-color: yellow;}
@@ -277,4 +262,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
       position: relative;
       left: 150px;
   }
+}
+
+li:hover{
+  background: #1f8dd6;
 }

@@ -1,3 +1,4 @@
+/*
 function minFunction() {
     var x = document.getElementById("mins");
     document.getElementById("rewrite").innerHTML=x.value;
@@ -7,7 +8,7 @@ function minFunction() {
     var x = document.getElementById("seconds");
     document.getElementById("rewrite2").innerHTML=x.value;
   }
-
+*/
   function sumFunction(){
       let mins = parseInt(document.getElementById('mins').value, 0);
       let seconds = parseInt(document.getElementById('seconds').value, 0);
@@ -31,7 +32,7 @@ function minFunction() {
       document.getElementById('split1200').innerHTML=parseInt(pace1200/3);
 
 
-      document.getElementById('sumFunc').innerHTML=total;
+      //document.getElementById('sumFunc').innerHTML=total;
   }
 
 
