@@ -5,62 +5,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coyotes</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src='app.js'></script>
     
 </head>
+<!--more code I didn't write -->
+<div id="layout">
+  <!-- Menu toggle -->
+  <a href="#menu" id="menuLink" class="menu-link">
+      <!-- Hamburger icon -->
+      <span></span>
+  </a>
+
+  <div id="menu">
+      <div class="pure-menu">
+          <a class="pure-menu-heading" href="#company"><img src='resources/coyotes_logo'>Coyotes</a>
+          
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href="#home" class="pure-menu-link">Home</a></li>
+              <li class="pure-menu-item"><a href="#about" class="pure-menu-link">About</a></li>
+
+              <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                  <a href="#" class="pure-menu-link">Services</a>
+              </li>
+
+              <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Contact</a></li>
+          </ul>
+      </div>
+  </div>
+
+  <div id="main">
+      <div class="header">
+          <h1>Coyotes</h1>
+          <h2>Times for intervals</h2>
+      </div>
+
+      <div class="content">
+
+        <input type='number' value='3' id='mins' min='1' max='6' onchange="minFunction()">:
+        <input type='number' value='30' id='seconds' min='0' max='55' step='5' onchange="secFunction()">
+        <input type="button" onclick="sumFunction()" value="calculate">
+    
+        <!--
+        <p id="rewrite">3</p>
+        <p id="rewrite2">30</p>
+        <p id="sumFunc">210</p>
+        -->
+    
+        <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>goal time</th>
+                <th>goal pace per 400m</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>200m</td>
+                <td id='pace200'></td>
+                <td>n/a</td>
+              </tr>
+              <tr>
+                <td>300m</td>
+                <td id='pace300'></td>
+                <td>n/a</td>
+              </tr>
+              <tr>
+                <td>400m</td>
+                <td id='pace400'></td>
+                <td id='split400'></td>
+              </tr>
+              <tr>
+                <td>800m</td>
+                <td id='pace800'></td>
+                <td id='split800'></td>
+              </tr>
+              <tr>
+                <td>1200m</td>
+                <td id='pace1200'></td>
+                <td id='split1200'></td>
+              </tr>
+            </tbody>
+      </table>
+
+
+
+          <h2 class="content-subhead">How to use this layout</h2>
+          <p>
+              To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/layouts/side-menu/styles.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
+          </p>
+
+          <h2 class="content-subhead">Now Let's Speak Some Latin</h2>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <div class="pure-g">
+              <div class="pure-u-1-4">
+                  <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
+              </div>
+              <div class="pure-u-1-4">
+                  <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
+              </div>
+              <div class="pure-u-1-4">
+                  <img class="pure-img-responsive" src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" alt="T-Shirt Store">
+              </div>
+              <div class="pure-u-1-4">
+                  <img class="pure-img-responsive" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" alt="Mountain">
+              </div>
+          </div>
+
+          <h2 class="content-subhead">Try Resizing your Browser</h2>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- -->
 <body id='body'>
-    <header id='header'>
-        <img src='resources/coyotes_logo'>
-        <h1>Time Calculator</h1>
-    </header>
-    
-    
-    
-    <input type='number' value='3' id='mins' min='1' max='6' onchange="minFunction()">:
-    <input type='number' value='30' id='seconds' min='0' max='55' step='5' onchange="secFunction()">
-    <input type="button" onclick="sumFunction()" value="calculate">
-
-    <p id="rewrite">3</p>
-    <p id="rewrite2">30</p>
-    <p id="sumFunc">210</p>
-
-    <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>goal time</th>
-            <th>goal pace per 400m</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>200m</td>
-            <td id='pace200'></td>
-            <td>n/a</td>
-          </tr>
-          <tr>
-            <td>300m</td>
-            <td id='pace300'></td>
-            <td>n/a</td>
-          </tr>
-          <tr>
-            <td>400m</td>
-            <td id='pace400'></td>
-            <td id='split400'></td>
-          </tr>
-          <tr>
-            <td>800m</td>
-            <td id='pace800'></td>
-            <td id='split800'></td>
-          </tr>
-          <tr>
-            <td>1200m</td>
-            <td id='pace1200'></td>
-            <td id='split1200'></td>
-          </tr>
-        </tbody>
-  </table>
+  
+ 
 
     
 
